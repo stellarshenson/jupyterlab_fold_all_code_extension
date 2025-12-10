@@ -13,8 +13,12 @@ Fold and expand all code cells in your notebooks with a single click. Perfect fo
 
 - **Fold All Code** - Collapse all code cells in the active notebook
 - **Expand All Code** - Restore visibility of all code cells
+- **Export Support** - Folded code cells are hidden when exporting to HTML, PDF, and other formats
 - **View menu integration** - Commands accessible from the View menu
 - **Keyboard shortcuts** - Quick access via configurable keyboard shortcuts
+
+> [!IMPORTANT]
+> To export a notebook with folded code cells hidden, you must **save the notebook first**. The export functionality reads the saved file, so any unsaved fold/expand changes will not be reflected in the exported document.
 
 ## Installation
 

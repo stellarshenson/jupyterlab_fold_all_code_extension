@@ -18,3 +18,6 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 5. **Task - Fix CI/CD workflow issues**: Resolved multiple workflow failures after initial CI/CD setup<br>
    **Result**: Fixed three issues discovered during CI runs: (1) Prettier formatting - ran `jlpm prettier --write` on `.claude/CLAUDE.md`, `package-lock.json`, and `ui-tests/tests/jupyterlab_fold_all_code_extension.spec.ts` to fix code style issues. (2) Repository URL mismatch - jupyter_releaser check-npm failed because `package.json` had placeholder URLs. Updated `homepage`, `bugs.url`, and `repository.url` to point to `https://github.com/stellarshenson/jupyterlab_fold_all_code_extension`. (3) Python version incompatibility - `test_isolated` job used Python 3.9 but `pyproject.toml` requires `>=3.10`. Updated `build.yml` to use Python 3.10 in the test_isolated job.
+
+6. **Task - Update README documentation**: Added export feature and save requirement note<br>
+   **Result**: Updated `README.md` to document the export support feature - folded code cells are hidden when exporting to HTML, PDF, and other formats. Added GitHub-style important callout explaining that notebooks must be saved before export for fold/expand changes to be reflected in the exported document.

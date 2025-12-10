@@ -23,6 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.14",
 ]
 dependencies = [
+    "nbconvert>=6.0"
 ]
 dynamic = ["version", "description", "authors", "urls", "keywords"]
 
