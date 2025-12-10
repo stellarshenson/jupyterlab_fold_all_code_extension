@@ -7,8 +7,8 @@ import { INotebookTracker, NotebookPanel } from '@jupyterlab/notebook';
 const PLUGIN_ID = 'jupyterlab_fold_all_code_extension:plugin';
 
 const CommandIDs = {
-  foldAllCode: 'notebook:fold-all-code',
-  expandAllCode: 'notebook:expand-all-code'
+  foldAllCode: 'jupyterlab_fold_all_code_extension:fold-all',
+  expandAllCode: 'jupyterlab_fold_all_code_extension:expand-all'
 };
 
 /**
@@ -17,22 +17,24 @@ const CommandIDs = {
  * and respected during export.
  */
 function setSourceHidden(cell: any, hidden: boolean): void {
-  const metadata = cell.model.metadata;
-  let jupyter = metadata.get('jupyter') as Record<string, any> | undefined;
+  // JupyterLab 4.x API: use cell.model.getMetadata/setMetadata
+  let jupyter = cell.model.getMetadata('jupyter') as
+    | Record<string, any>
+    | undefined;
 
   if (hidden) {
     if (!jupyter) {
       jupyter = {};
     }
     jupyter['source_hidden'] = true;
-    metadata.set('jupyter', jupyter);
+    cell.model.setMetadata('jupyter', jupyter);
   } else {
     if (jupyter) {
       delete jupyter['source_hidden'];
       if (Object.keys(jupyter).length === 0) {
-        metadata.delete('jupyter');
+        cell.model.deleteMetadata('jupyter');
       } else {
-        metadata.set('jupyter', jupyter);
+        cell.model.setMetadata('jupyter', jupyter);
       }
     }
   }
