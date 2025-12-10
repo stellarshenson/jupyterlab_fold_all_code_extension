@@ -26,6 +26,9 @@ dependencies = [
 ]
 dynamic = ["version", "description", "authors", "urls", "keywords"]
 
+[project.entry-points."nbconvert.preprocessors"]
+remove_folded_code = "jupyterlab_fold_all_code_extension:RemoveFoldedCodePreprocessor"
+
 [tool.hatch.version]
 source = "nodejs"
 
@@ -39,6 +42,8 @@ exclude = [".github", "binder"]
 [tool.hatch.build.targets.wheel.shared-data]
 "jupyterlab_fold_all_code_extension/labextension" = "share/jupyter/labextensions/jupyterlab_fold_all_code_extension"
 "install.json" = "share/jupyter/labextensions/jupyterlab_fold_all_code_extension/install.json"
+"jupyter-config/jupyter_nbconvert_config.json" = "etc/jupyter/jupyter_nbconvert_config.json"
+"jupyter-config/jupyter_server_config.d/jupyterlab_fold_all_code_extension.json" = "etc/jupyter/jupyter_server_config.d/jupyterlab_fold_all_code_extension.json"
 
 [tool.hatch.build.hooks.version]
 path = "jupyterlab_fold_all_code_extension/_version.py"
