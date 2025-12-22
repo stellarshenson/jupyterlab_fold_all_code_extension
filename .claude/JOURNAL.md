@@ -21,3 +21,6 @@ This journal tracks substantive work on documents, diagrams, and documentation c
 
 6. **Task - Update README documentation**: Added export feature and save requirement note<br>
    **Result**: Updated `README.md` to document the export support feature - folded code cells are hidden when exporting to HTML, PDF, and other formats. Added GitHub-style important callout explaining that notebooks must be saved before export for fold/expand changes to be reflected in the exported document.
+
+7. **Task - Remove context menu, focus on export**: Simplified extension to focus on export functionality<br>
+   **Result**: Removed context menu items from `src/index.ts` - the fold/expand commands remain available in the View menu only, reducing UI clutter. Updated `README.md` to emphasize the export functionality as the primary feature, with fold/expand commands as supporting functionality. The extension's main value proposition is now clearly stated: export notebooks with folded code cells hidden for sharing with non-technical audiences.

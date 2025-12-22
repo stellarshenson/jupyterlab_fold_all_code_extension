@@ -7,18 +7,15 @@
 [![JupyterLab 4](https://img.shields.io/badge/JupyterLab-4-orange.svg)](https://jupyterlab.readthedocs.io/en/stable/)
 [![Brought To You By KOLOMOLO](https://img.shields.io/badge/Brought%20To%20You%20By-KOLOMOLO-00ffff?style=flat)](https://kolomolo.com)
 
-Fold and expand all code cells in your notebooks with a single click. Perfect for creating clean notebooks to share with non-technical audiences.
+Export notebooks with folded code cells hidden. Perfect for sharing clean notebooks with non-technical audiences - fold code, save, and export to HTML or PDF without visible code.
 
 ## Features
 
-- **Fold All Code** - Collapse all code cells in the active notebook
-- **Expand All Code** - Restore visibility of all code cells
-- **Export Support** - Folded code cells are hidden when exporting to HTML, PDF, and other formats
-- **View menu integration** - Commands accessible from the View menu
-- **Keyboard shortcuts** - Quick access via configurable keyboard shortcuts
+- **Export with Hidden Code** - Folded code cells are automatically hidden when exporting to HTML, PDF, and other formats
+- **Fold/Expand All** - Commands available in the View menu to fold or expand all code cells at once
 
 > [!IMPORTANT]
-> To export a notebook with folded code cells hidden, you must **save the notebook first**. The export functionality reads the saved file, so any unsaved fold/expand changes will not be reflected in the exported document.
+> To export a notebook with folded code cells hidden, you must **save the notebook first**. The export reads the saved file, so unsaved changes will not be reflected in the exported document.
 
 ## Installation
 

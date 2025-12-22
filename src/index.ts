@@ -111,19 +111,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
       },
       isEnabled: () => notebookTracker.currentWidget !== null
     });
-
-    // Add to notebook context menu
-    app.contextMenu.addItem({
-      command: CommandIDs.foldAllCode,
-      selector: '.jp-Notebook',
-      rank: 100
-    });
-
-    app.contextMenu.addItem({
-      command: CommandIDs.expandAllCode,
-      selector: '.jp-Notebook',
-      rank: 101
-    });
   }
 };
 
