@@ -22,7 +22,7 @@ Export notebooks with folded code cells hidden. Perfect for sharing clean notebo
 
 ## Installation
 
-Requires JupyterLab 4.0.0 or higher.
+Requires JupyterLab 4.6.0 or higher.
 
 ```bash
 pip install jupyterlab_fold_all_code_extension
