@@ -1,6 +1,6 @@
 {
-    "name": "jupyterlab_fold_all_code_extension",
-    "version": "1.0.35",
+    "name": "@stellarshenson/jupyterlab-fold-all-code-extension",
+    "version": "1.0.37",
     "description": "Jupyterlab extension to fold and expand all code cells, to help create nice notebook to share with non-technical audience",
     "keywords": [
         "jupyter",
@@ -131,5 +131,8 @@
             "selector-no-vendor-prefix": null,
             "value-no-vendor-prefix": null
         }
+    },
+    "allowScripts": {
+        "@fortawesome/fontawesome-free@5.15.4": true
     }
 }

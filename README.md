@@ -1,7 +1,7 @@
 # jupyterlab_fold_all_code_extension
 
 [![GitHub Actions](https://github.com/stellarshenson/jupyterlab_fold_all_code_extension/actions/workflows/build.yml/badge.svg)](https://github.com/stellarshenson/jupyterlab_fold_all_code_extension/actions/workflows/build.yml)
-[![npm version](https://img.shields.io/npm/v/jupyterlab_fold_all_code_extension.svg)](https://www.npmjs.com/package/jupyterlab_fold_all_code_extension)
+[![npm version](https://img.shields.io/npm/v/@stellarshenson/jupyterlab-fold-all-code-extension.svg)](https://www.npmjs.com/package/@stellarshenson/jupyterlab-fold-all-code-extension)
 [![PyPI version](https://img.shields.io/pypi/v/jupyterlab-fold-all-code-extension.svg)](https://pypi.org/project/jupyterlab-fold-all-code-extension/)
 [![Total PyPI downloads](https://static.pepy.tech/badge/jupyterlab-fold-all-code-extension)](https://pepy.tech/project/jupyterlab-fold-all-code-extension)
 [![JupyterLab 4](https://img.shields.io/badge/JupyterLab-4-orange.svg)](https://jupyterlab.readthedocs.io/en/stable/)

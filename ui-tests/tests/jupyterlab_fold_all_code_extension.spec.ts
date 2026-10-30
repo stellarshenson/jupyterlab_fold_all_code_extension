@@ -19,7 +19,7 @@ test('should emit an activation console message', async ({ page }) => {
     logs.filter(
       s =>
         s ===
-        'JupyterLab extension jupyterlab_fold_all_code_extension is activated!'
+        'JupyterLab extension @stellarshenson/jupyterlab-fold-all-code-extension is activated!'
     )
   ).toHaveLength(1);
 });

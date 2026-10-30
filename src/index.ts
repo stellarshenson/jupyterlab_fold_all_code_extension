@@ -4,7 +4,7 @@ import {
 } from '@jupyterlab/application';
 import { INotebookTracker, NotebookPanel } from '@jupyterlab/notebook';
 
-const PLUGIN_ID = 'jupyterlab_fold_all_code_extension:plugin';
+const PLUGIN_ID = '@stellarshenson/jupyterlab-fold-all-code-extension:plugin';
 
 const CommandIDs = {
   foldAllCode: 'jupyterlab_fold_all_code_extension:fold-all',
@@ -19,8 +19,7 @@ const CommandIDs = {
 function setSourceHidden(cell: any, hidden: boolean): void {
   // JupyterLab 4.x API: use cell.model.getMetadata/setMetadata
   let jupyter = cell.model.getMetadata('jupyter') as
-    | Record<string, any>
-    | undefined;
+    Record<string, any> | undefined;
 
   if (hidden) {
     if (!jupyter) {
@@ -73,7 +72,7 @@ function expandAllCodeCells(notebookPanel: NotebookPanel): void {
 }
 
 /**
- * Initialization data for the jupyterlab_fold_all_code_extension extension.
+ * Initialization data for the @stellarshenson/jupyterlab-fold-all-code-extension extension.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
   id: PLUGIN_ID,
@@ -83,7 +82,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
   requires: [INotebookTracker],
   activate: (app: JupyterFrontEnd, notebookTracker: INotebookTracker) => {
     console.log(
-      'JupyterLab extension jupyterlab_fold_all_code_extension is activated!'
+      'JupyterLab extension @stellarshenson/jupyterlab-fold-all-code-extension is activated!'
     );
 
     // Add fold all code command

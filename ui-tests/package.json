@@ -1,7 +1,7 @@
 {
-  "name": "jupyterlab_fold_all_code_extension-ui-tests",
+  "name": "@stellarshenson/jupyterlab-fold-all-code-extension-ui-tests",
   "version": "1.0.0",
-  "description": "JupyterLab jupyterlab_fold_all_code_extension Integration Tests",
+  "description": "JupyterLab @stellarshenson/jupyterlab-fold-all-code-extension Integration Tests",
   "private": true,
   "scripts": {
     "start": "jupyter lab --config jupyter_server_test_config.py",

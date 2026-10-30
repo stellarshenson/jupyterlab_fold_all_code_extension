@@ -2,7 +2,7 @@
  * Example of [Jest](https://jestjs.io/docs/getting-started) unit tests
  */
 
-describe('jupyterlab_fold_all_code_extension', () => {
+describe('@stellarshenson/jupyterlab-fold-all-code-extension', () => {
   it('should be tested', () => {
     expect(1 + 1).toEqual(2);
   });

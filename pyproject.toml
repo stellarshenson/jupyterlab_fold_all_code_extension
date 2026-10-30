@@ -46,8 +46,8 @@ artifacts = ["jupyterlab_fold_all_code_extension/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupyterlab_fold_all_code_extension/labextension" = "share/jupyter/labextensions/jupyterlab_fold_all_code_extension"
-"install.json" = "share/jupyter/labextensions/jupyterlab_fold_all_code_extension/install.json"
+"jupyterlab_fold_all_code_extension/labextension" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-fold-all-code-extension"
+"install.json" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-fold-all-code-extension/install.json"
 "jupyter-config/jupyter_nbconvert_config.json" = "etc/jupyter/jupyter_nbconvert_config.json"
 "jupyter-config/jupyter_server_config.d/jupyterlab_fold_all_code_extension.json" = "etc/jupyter/jupyter_server_config.d/jupyterlab_fold_all_code_extension.json"
 

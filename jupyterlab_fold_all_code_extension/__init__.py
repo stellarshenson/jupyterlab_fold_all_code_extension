@@ -14,7 +14,7 @@ from .preprocessor import RemoveFoldedCodePreprocessor
 def _jupyter_labextension_paths():
     return [{
         "src": "labextension",
-        "dest": "jupyterlab_fold_all_code_extension"
+        "dest": "@stellarshenson/jupyterlab-fold-all-code-extension"
     }]
 
 
