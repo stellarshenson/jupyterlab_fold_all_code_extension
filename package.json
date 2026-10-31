@@ -99,6 +99,16 @@
         "access": "public"
     },
     "jupyterlab": {
+        "discovery": {
+            "server": {
+                "managers": [
+                    "pip"
+                ],
+                "base": {
+                    "name": "jupyterlab_fold_all_code_extension"
+                }
+            }
+        },
         "extension": true,
         "outputDir": "jupyterlab_fold_all_code_extension/labextension"
     },
