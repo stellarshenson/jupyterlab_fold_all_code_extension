@@ -18,6 +18,6 @@ JupyterLab extension for folding and expanding all code cells in notebooks.
 
 **Package Names**:
 
-- npm: `jupyterlab_fold_all_code_extension`
+- npm: `@stellarshenson/jupyterlab-fold-all-code-extension`
 - PyPI: `jupyterlab-fold-all-code-extension`
 - GitHub repo: `stellarshenson/jupyterlab_fold_all_code_extension`

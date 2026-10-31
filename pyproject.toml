@@ -32,6 +32,14 @@ dev = [
     "jupyterlab>=4.6,<5",
     "jupyter-builder>=1.2.0,<2",
 ]
+test = [
+    "coverage",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "pytest-jupyter[server]>=0.6.0"
+]
+
 [project.entry-points."nbconvert.preprocessors"]
 remove_folded_code = "jupyterlab_fold_all_code_extension:RemoveFoldedCodePreprocessor"
 
@@ -48,8 +56,8 @@ exclude = [".github", "binder"]
 [tool.hatch.build.targets.wheel.shared-data]
 "jupyterlab_fold_all_code_extension/labextension" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-fold-all-code-extension"
 "install.json" = "share/jupyter/labextensions/@stellarshenson/jupyterlab-fold-all-code-extension/install.json"
-"jupyter-config/jupyter_nbconvert_config.json" = "etc/jupyter/jupyter_nbconvert_config.json"
-"jupyter-config/jupyter_server_config.d/jupyterlab_fold_all_code_extension.json" = "etc/jupyter/jupyter_server_config.d/jupyterlab_fold_all_code_extension.json"
+"jupyter-config/server-config" = "etc/jupyter/jupyter_server_config.d"
+"jupyter-config/jupyter_nbconvert_config.json" = "etc/jupyter/jupyter_nbconvert_config.json"  # template-sync: keep, the jupyter nbconvert CLI reads this file
 
 [tool.hatch.build.hooks.version]
 path = "jupyterlab_fold_all_code_extension/_version.py"
@@ -83,6 +91,9 @@ before-build-npm = [
     "jlpm build:prod"
 ]
 before-build-python = ["jlpm clean:all"]
+# The mock PyPI of the check, pypiserver 2.3.2 on Python 3.13, answers 400 when metadata plus a file part held in memory pass 102400 bytes.
+# Newer pypiserver prints "Listening on" to stderr and jupyter-releaser waits for it on stdout, so the limit is raised in place.
+before-publish-assets = ["""python -c "import pathlib, pypiserver; [f.write_text(f.read_text().replace('MEMFILE_MAX = 102400', 'MEMFILE_MAX = 2 ** 30')) for f in pathlib.Path(pypiserver.__file__).parent.rglob('bottle.py')]" """]
 
 [tool.check-wheel-contents]
 ignore = ["W002"]

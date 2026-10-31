@@ -42,9 +42,17 @@ jobs:
         set -eux
         python -m pip install .[test]
 
+        jupyter server extension list
+        jupyter server extension list 2>&1 | grep -ie "jupyterlab_fold_all_code_extension.*OK"
+
         jupyter labextension list
         jupyter labextension list 2>&1 | grep -ie "@stellarshenson/jupyterlab-fold-all-code-extension.*OK"
         python -m jupyterlab.browser_check
+
+    - name: Check that all endpoints are authenticated
+      run: |
+        set -eux
+        python .github/scripts/check_auth.py
 
     - name: Package the extension
       run: |
@@ -83,6 +91,9 @@ jobs:
 
         pip install "jupyterlab>=4.6,<5" jupyterlab_fold_all_code_extension*.whl
 
+
+        jupyter server extension list
+        jupyter server extension list 2>&1 | grep -ie "jupyterlab_fold_all_code_extension.*OK"
 
         jupyter labextension list
         jupyter labextension list 2>&1 | grep -ie "@stellarshenson/jupyterlab-fold-all-code-extension.*OK"
@@ -148,3 +159,16 @@ jobs:
         path: |
           ui-tests/test-results
           ui-tests/playwright-report
+
+  check_links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jupyterlab/maintainer-tools/.github/actions/base-setup@v1
+        with:
+          python_version: '3.13'
+      - uses: jupyterlab/maintainer-tools/.github/actions/check-links@v1
+        with:
+          ignore_links: "https://www.npmjs.com/package/.* https://www.youtube.com/.*"

@@ -7,11 +7,11 @@ author_name: Stellars Henson
 has_ai_rules: false
 has_binder: false
 has_settings: false
-kind: frontend
+kind: frontend-and-server
 labextension_name: '@stellarshenson/jupyterlab-fold-all-code-extension'
 project_short_description: Jupyterlab extension to fold and expand all code cells,
     to help create nice notebook to share with non-technical audience
 python_name: jupyterlab_fold_all_code_extension
-repository: ''
+repository: https://github.com/stellarshenson/jupyterlab_fold_all_code_extension
 test: true
 
