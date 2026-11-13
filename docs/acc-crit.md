@@ -37,7 +37,9 @@ Folding and expanding all code cells
 
 - log: 2026-11-13T06:49:42Z @kj category created
 
-- [ ] `ACC-FOLD-4-FOLD-ALL` **Fold and expand all code cells** - MEDIUM; View menu `Collapse All Code` and `Expand All Code`, and the commands `jupyterlab_fold_all_code_extension:fold-all` and `:expand-all`, hide or show every code cell and set or remove `jupyter.source_hidden`
+- [x] `ACC-FOLD-4-FOLD-ALL` **Fold and expand all code cells** - MEDIUM; View menu `Collapse All Code` and `Expand All Code`, and the commands `jupyterlab_fold_all_code_extension:fold-all` and `:expand-all`, hide or show every code cell and set or remove `jupyter.source_hidden`
+  - evidence: Galata ui-tests/tests/fold_all.spec.ts passes in build_test.py at 1.0.44: fold-all saves jupyter.source_hidden true on both code cells and none on the markdown cell, expand-all removes it
   - test: Galata: run fold-all on a 2-cell notebook, save, read jupyter.source_hidden from the file
   - test-tags: E2E
   - log: 2026-11-13T06:49:42Z @kj added
+  - log: 2026-11-13T09:18:14Z @kj closed
