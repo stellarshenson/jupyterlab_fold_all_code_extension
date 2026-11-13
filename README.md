@@ -14,8 +14,8 @@ Export notebooks with folded code cells hidden. Perfect for sharing clean notebo
 
 ## Features
 
-- **Export with Hidden Code** - Folded code cells are automatically hidden when exporting to HTML, PDF, and other formats
-- **Fold/Expand All** - Commands available in the View menu to fold or expand all code cells at once
+- **Export with Hidden Code** - Folded code cells are automatically hidden when exporting to HTML, PDF, and other formats. An export to a notebook (`.ipynb`) keeps the code, so `jupyter nbconvert --to notebook --inplace` never removes it
+- **Fold/Expand All** - Fold or expand all code cells at once with JupyterLab's own View menu items `Collapse All Code` and `Expand All Code`. The extension also registers the commands `jupyterlab_fold_all_code_extension:fold-all` and `jupyterlab_fold_all_code_extension:expand-all`, which can be bound to a keyboard shortcut
 
 > [!IMPORTANT]
 > To export a notebook with folded code cells hidden, you must **save the notebook first**. The export reads the saved file, so unsaved changes will not be reflected in the exported document.

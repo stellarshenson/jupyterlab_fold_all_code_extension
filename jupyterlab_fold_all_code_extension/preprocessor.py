@@ -5,6 +5,7 @@ This preprocessor checks for the `jupyter.source_hidden` metadata on cells
 and removes the source code from those cells during export to HTML, PDF, etc.
 """
 
+from nbconvert.exporters import NotebookExporter
 from nbconvert.preprocessors import Preprocessor
 
 
@@ -16,6 +17,12 @@ class RemoveFoldedCodePreprocessor(Preprocessor):
     source code will be cleared during export, effectively hiding it from
     the exported document.
     """
+
+    def preprocess(self, nb, resources):
+        # a notebook written as a notebook keeps its code: `nbconvert --to notebook --inplace` would destroy it
+        if isinstance(self.parent, NotebookExporter):
+            return nb, resources
+        return super().preprocess(nb, resources)
 
     def preprocess_cell(self, cell, resources, cell_index):
         """
@@ -43,5 +50,7 @@ class RemoveFoldedCodePreprocessor(Preprocessor):
             if jupyter_metadata.get('source_hidden', False):
                 # Clear the source code - cell remains but code is hidden
                 cell.source = ''
+                # nbconvert's own mark (TagRemovePreprocessor): the templates then render no input box
+                cell.metadata['transient'] = {'remove_source': True}
 
         return cell, resources
