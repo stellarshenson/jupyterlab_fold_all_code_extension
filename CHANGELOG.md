@@ -2,6 +2,16 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## [1.0.45] - 2026-11-13
+
+### Changed
+
+- Prove fold-all and expand-all write jupyter.source_hidden to the file
+
+### Fixed
+
+- Keep folded code in notebook exports and drop the empty input box
+
 ## [1.0.42] - 2026-10-31
 
 ### Changed
